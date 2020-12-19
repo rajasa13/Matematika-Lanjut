@@ -1,0 +1,71 @@
+---
+title: "Pemrograman R CPMK 3a"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+<h3>Mahesa Cadi Rajasa (19523122)</h3>
+
+<h4>Soal Nomor 1</h4>
+```{r}
+library(ggplot2)
+library(polynom)
+```
+
+```{r}
+x <- c(1, 2, 3)
+y <- c(2.7183, 7.3891, 20.0855)
+dat <- data.frame(cbind(x, y))
+
+ggplot(dat, aes(x=x, y=y)) + geom_point(size=5, col='blue')
+```
+
+```{r}
+poly.calc(x, y)
+```
+
+```{r}
+f <- function(x) {
+return(6.0731 - 7.3676*x + 4.0128*x^2)
+}
+
+ggplot(dat, aes(x=x, y=y)) +
+geom_point(size=5, col='blue') +
+stat_function(fun = f, size=1.25, alpha=0.4)
+
+f(2.6)
+```
+
+<h4>Soal Nomor 2</h4>
+```{r}
+library(ggplot2)
+library(polynom)
+```
+
+```{r}
+x <- c(1, 1.5, 2, 4, 3.5, 4.5)
+y <- c(5, 5, 6, 8, 8, 9)
+dat <- data.frame(cbind(x, y))
+
+ggplot(dat, aes(x=x, y=y)) + geom_point(size=5, col='blue')
+```
+
+```{r}
+poly.calc(x, y)
+```
+
+```{r}
+f <- function(x) {
+return(12 - 13.60952*x + 7.761905*x^2 - x^3 -  
+0.1904762*x^4 + 0.03809524*x^5)
+}
+
+ggplot(dat, aes(x=x, y=y)) +
+geom_point(size=5, col='blue') +
+stat_function(fun = f, size=1.25, alpha=0.4)
+
+f(5)
+```
+
